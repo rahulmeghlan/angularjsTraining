@@ -1,0 +1,3 @@
+- Create 2 classes named done and pending, which should change the color of the rows in notes based on their done state.
+
+i.e : if done is true, it's row should be painted green else row should be painted red.
