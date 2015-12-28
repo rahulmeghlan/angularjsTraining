@@ -1,0 +1,16 @@
+<html>
+<head><title>Hello AngularJS</title></head>
+<body>
+Hello {{1 + 2}}nd time AngularJS
+
+<script
+        src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js">
+</script>
+<script type="text/javascript">
+    angular.module('notesApp', []);
+    angular.element(document).ready(function() {
+        angular.bootstrap(document, ['notesApp']);
+    });
+</script>
+</body>
+</html>
