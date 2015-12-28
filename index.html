@@ -1,0 +1,40 @@
+<html ng-app="notesApp">
+<head><title>Notes App</title></head>
+<!-- 1. This directive (ng-controller) allows us to associate an instance of a controller with a UI element -->
+<!-- 2. We gave this particular instance of the MainCtrl a name when we used ng-controller -->
+<body ng-controller="MainCtrl as ctrl">
+{{ctrl.helloMsg}} AngularJS.
+<br/>
+{{ctrl.goodbyeMsg}} AngularJS
+<button ng-click="ctrl.changeMe()">CHANGE</button>
+<h4>Array</h4>
+<!-- 1. ng-repeat is one of the most versatile and heavily used directives of AngularJS, because it allows us to iterate over an array or over the keys and values of an object and display them in the HTML -->
+<!-- Inside the context of the ng-repeat, we now have a new variable, note, which is not present in our controller. This is created by ng-repeat, and each instance of the ng-repeat has its own version and value of note, obtained from each item of the array. -->
+<div ng-repeat="note in ctrl.notes">
+    Without Bind Once: <span class="label" ng-bind="note.label"></span> |
+    With Bind Once: <span class="label" ng-bind="::note.label"></span> | <!-- :: This tells AngularJS that once the binding expression has a value, display it, and stop updating it after that. -->
+    <span class="status" ng-bind="note.done"></span><br />
+</div>
+
+<script
+        src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js">
+</script>
+<script type="text/javascript">
+    angular.module('notesApp', [])
+            .controller('MainCtrl', [function () {
+                var self = this;
+                self.helloMsg = 'Hello '; //Anything that the user needs to see, or the HTML needs to use, needs to be defined on this.
+                self.notes = [
+                    {id: 1, label: 'First Note', done: false},
+                    {id: 2, label: 'Second Note', done: false},
+                    {id: 3, label: 'Done Note', done: true},
+                    {id: 4, label: 'Last Note', done: false}
+                ];
+                self.changeMe = function() {
+                    self.notes[1].label = 'Changed Note';
+                };
+                var goodbyeMsg = 'Goodbye';
+            }]);
+</script>
+</body>
+</html>
