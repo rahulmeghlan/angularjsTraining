@@ -1,3 +1,22 @@
-- Create 2 classes named done and pending, which should change the color of the rows in notes based on their done state.
+1. Create 2 classes named done and pending, which should change the color of the rows in notes based on their done state.
+   i.e : if done is true, it's row should be painted green else row should be painted red.
 
-i.e : if done is true, it's row should be painted green else row should be painted red.
+
+2. Change the notes json to following ==> self.notes = {
+                                              shyam: {
+                                                id: 1,
+                                                label: 'First Note',
+                                                done: false
+                                              },
+                                              Misko: {
+                                                id: 3,
+                                                label: 'Finished Third Note',
+                                                done: true
+                                              },
+                                              brad: {
+                                                id: 2,
+                                                label: 'Second Note',
+                                                done: false
+                                              }
+                                            };
+   Print the name of the label and the author in the done/pending rows
